@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>Strona główna</title>
   </head>
   <body>
@@ -27,28 +26,26 @@
       </ul>
     </div>
 
-    <div class="btn-container">
-      <ul class="select-list">
-        <li>
-          <button type="button" name="button">Użytkownicy</button>
-        </li>
-        <li>
-          <button type="button" name="button">Zgłoszenia</button>
-        </li>
-        <li>
-          <button onclick="window.location.href = 'panel.html'" type="button" name="button">Powrót do panelu</button>
-        </li>
-        <li>
-          <button style="margin-left: 100px;" type="button" name="button">Wstrzymaj stronę</button>
-        </li>
-        <li>
-          <button type="button" name="button">Wyślij ogólny komunikat</button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="main-site-content">
-    </div>
+    <main class="main-site-content">
+      <div class="popular">
+        <h1>Popularne</h1>
+        <ul class="select-list">
+          <li><button id="posts-btn" type="button" name="button">Wpisy</button></li>
+          <li><button id="photos-btn" type="button" name="button">Zdjecia</button></li>
+        </ul>
+        <div class="popular-element">
+          Tutaj będą najbardziej lajkowane zdjęcia, wpisy z forum i coś jeszcze
+        </div>
+      </div>
+      <article class="regulations">
+        <h2>Regulamin:</h2>
+        <ol>
+          <li><p>Nie obrażamy innych. Wyzwiska skutkują banem</p></li>
+          <li><p>Nie spamujemy na forum</p></li>
+          <li><p>Nie wstawiamy nieodpowiednich zdjęć</p></li>
+        </ol>
+      </article>
+    </main>
 
 
 
