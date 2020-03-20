@@ -1,0 +1,268 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url("../images/background4.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* naglowek z linkami do podstron */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+#logo {
+  text-decoration: none;
+  color: white;
+  margin-left: 50px;
+  font-size: 30px;
+  text-shadow: 2px 2px #1622bb;
+  align-self: center;
+}
+#logo:hover {
+  opacity: 0.6;
+}
+
+.topnav ul{
+  list-style-type: none;
+}
+
+.topnav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.topnav ul li a{
+  background-color: #4d8dc1;
+  border-radius: 30%;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.topnav a:hover {
+  background-color: #2d5095;
+  opacity: 0.5;
+}
+
+/* pasek z przyciskami do logowania oraz rejestracji (obecnie niefunkcjonalne)*/
+.acc-bar {
+  display: flex;
+  background-color: rgba(159,241,234, 0.3);
+  justify-content: flex-end;
+}
+
+.acc-bar ul{
+  list-style-type: none;
+  margin-right: 100px;
+}
+
+.acc-bar li {
+  display: inline-block;
+}
+
+
+#log-in-btn, #sign-up-btn {
+  color: black;
+  background-color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+
+
+
+#log-in-btn:hover, #sign-up-btn:hover{
+  opacity: 0.7;
+}
+
+
+/* GLOWNA ZAWARTOSC */
+.main-site-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+/* cała ramka z popularną aktywnością */
+.popular {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(159,241,234, 0.3);
+  margin: 30px;
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  height: 50%;
+  width: 50%;
+}
+
+.popular h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: center;
+}
+
+.select-list {
+  margin-top: 5px;
+  list-style-type: none;
+}
+
+.popular li {
+  display: inline-block;
+}
+
+.popular button {
+  margin-right: 10px;
+  padding: 10px 15px;
+}
+
+.popular-element {
+  background-color: rgba(255,255,255, 0.7);
+  flex: 1;
+}
+
+.regulations {
+  align-self: flex-start;
+  margin-left: 40%;
+  font-size: 25px;
+  width: 500px;
+  background-color: rgba(38,93,101, 0.9);
+  border-radius: 10%;
+}
+
+/* FORUM */
+.forum-content {
+  display: flex;
+  flex: 1;
+}
+
+.subjects {
+  flex: 3;
+  background-color: rgba(255,255,255, 0.7);
+  border-right: solid;
+  flex-direction: column;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: rgba(255,255,255, 0.7);
+}
+
+main .aside-header{
+  border-bottom: solid;
+  border-color: black;
+  font-size: 20px;
+  background-color: #054d5d;
+  justify-content: center;
+}
+
+main .content {
+  display: flex;
+  border-style: inset;
+  border-color: #3b3b3b;
+  padding: 10px 0;
+  border-left: none;
+  border-top: none;
+  align-content: center;
+}
+
+.content img, .subjects .user-data {
+  height: 70px;
+  width: 70px;
+  border: solid;
+}
+
+.subjects .user-data {
+  height: 100%;
+  width: 40%;
+}
+
+.user-options {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.btn-container ul {
+  background-color: rgba(32,73,247);
+  margin: 0;
+  padding-top: 15px;
+  border-bottom: solid;
+}
+
+.btn-container li{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.btn-container button, .btn-container input {
+  padding: 10px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* aby elementy nie rozsuwaly kontenera, a wpasowywaly sie w niego przerzucajac elementy do dolu */
+  justify-content: flex-start;
+}
+
+.gallery img {
+  height: 200px;
+  width: 300px;
+  margin: 5px;
+  border: solid;
+}
+
+.gallery img:hover {
+  opacity: 0.8;
+}
+
+.pic-container {
+  display: flex;
+  padding: 25px;
+  width: 50%;
+  height: 200px;
+  width: 400px;
+}
+
+.pic-container input {
+  height: 40px;
+  width: 30px;
+}
+
+
+/* PROFIL */
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.profile-info-container img{
+  border: solid;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.profile-info-container .user-data {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  background-color: rgba(255,255,255, 0.5);
+}
+
+
+footer {
+  background-color: rgba(89,89,89, 0.7);
+}
