@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <a id="logo" href="index.html">SkiForum</a>
+      <a id="logo" href="../index.html">SkiForum</a>
       <nav class=topnav>
         <ul>
           <li><a href="profil.html">Profil</a></li>
@@ -21,14 +21,13 @@
     </header>
     <div class="content">
       <div class="register">
-        <header class="register-welcome">Witaj ponownie!</header>
-        <form class="register-form" action="index.html" method="post">
-          <input type="email" name="email" required placeholder="e-mail">
+        <header class="register-welcome">Witaj nowy użytkowniku</header>
+        <form class="register-form">
+          <input type="text" name="login" required placeholder="Login">
           <input type="password" name="password" required placeholder="Hasło">
-          <input style="margin-bottom: 5px;" id="register-btn" type="submit" name="register" value="Zaloguj">
-          <p><a href="#" style="color: white">Zapomniałem hasła</a></p>
-          <p>Jednak nie masz konta? <a style="color: white" href="rejestracja.html">Zarejestruj się teraz</a></p>
-          <a href="#"></a>
+          <input type="email" name="email" required placeholder="e-mail">
+          <input style="margin-bottom: 5px;" id="register-btn" type="submit" name="register" value="Zarejestruj">
+          <p>Masz już konto? <a href="logowanie.html" style="text-decoration:underline; color: white">Zaloguj się</a></p>
         </form>
       </div>
     </div>

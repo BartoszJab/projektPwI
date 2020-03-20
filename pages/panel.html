@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Asortyment</title>
+    <title>Strona główna</title>
   </head>
   <body>
     <header>
-      <a id="logo" href="index.html">SkiForum</a>
+      <a id="logo" href="../index.html">SkiForum</a>
       <nav class=topnav>
         <ul>
           <li><a href="profil.html">Profil</a></li>
@@ -29,29 +29,48 @@
     <div class="btn-container">
       <ul class="select-list">
         <li>
-          <button type="button" name="button">Początkujący</button>
+          <button type="button" name="button">Użytkownicy</button>
         </li>
         <li>
-          <button type="button" name="button">Średnio zaawansowani</button>
+          <button type="button" name="button">Zgłoszenia</button>
         </li>
         <li>
-          <button type="button" name="button">Zaawansowani</button>
-        </li>
-        <li>
-          <button type="button" name="button">Jazda freeride'owa</button>
+          <button onclick="window.location.href = 'ustawienia_strony.html'" type="button" name="button">Ustawienia strony</button>
         </li>
       </ul>
     </div>
+
     <main class="forum-content">
       <div class="subjects">
-        <div class="content" style="text-transform: uppercase; font-size: 25px">
-          Rekomendowane
+        <div class="content">
+          <img src="../images/avatar2.png" alt="avatar">
+          <div class="user-data">
+            <div>
+              nick: gucio
+            </div>
+            <div>
+              data dolaczenia: 22.07.2021
+            </div>
+            <div>
+              ilość postów: 221
+            </div>
+            <div>
+              otrzymał raportów: 0;
+            </div>
+          </div>
+          <div class="user-options">
+            <button type="button" name="button">Usuń</button>
+            <button type="button" name="button">Wycisz</button>
+            <button type="button" name="button">Wyślij wiadomość</button>
+          </div>
         </div>
         <div class="content">
-          AlfaIOmega: Fishery alfa 41
+
+        </div>
+        <div class="content">
+
         </div>
       </div>
-
       <aside class="">
         <header class="aside-header">
           Najnowsze posty
@@ -75,6 +94,17 @@
         <div class="content">
           Lawina_mi_niestraszna
         </div>
+
+        <header class="aside-header">
+          Zgłoszone posty
+        </header>
+        <div class="content">
+          RoboCop: narty są najgorsze na świecie, lepiej pobiegać sobie
+        </div>
+        <div class="content">
+          MiniMajk9988: !!!----...///????!!2222aa
+        </div>
+
       </aside>
 
     </main>

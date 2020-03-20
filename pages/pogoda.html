@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Zdjęcia</title>
+    <title>Pogoda</title>
   </head>
   <body>
     <header>
-      <a id="logo" href="index.html">SkiForum</a>
+      <a id="logo" href="../index.html">SkiForum</a>
       <nav class=topnav>
         <ul>
           <li><a href="profil.html">Profil</a></li>
@@ -27,46 +27,19 @@
     </div>
 
     <div class="btn-container">
-      <ul class="select-list">
-        <li>
-          <button type="button" name="button">Najwyżej oceniane</button>
-        </li>
-        <li>
-          <button type="button" name="button">Wszystkie</button>
-        </li>
-        <li>
-          <button type="button" name="button">Twoje zdjęcia</button>
-        </li>
+      <form>
+      <ul>
+          <li><input type="text" name="osrodek" placeholder="Wyszukaj ośrodek narciarski"></li>
+          <li><input type="submit" class="find-place" value="Wyszukaj"></li>
       </ul>
+      </form>
     </div>
     <main class="forum-content">
       <div class="subjects">
-        <div class="gallery">
-          <div class="pic-container">
-            <img src="../images/ex01.jpg" alt="fotka">
-            <input type="image" src="../icons/thumb-up.png" alt="thumb icon">
-          </div>
-          <div class="pic-container">
-            <img src="../images/ex02.jpg" alt="fotka">
-            <input type="image" src="../icons/thumb-up.png" alt="thumb icon">
-          </div>
-          <div class="pic-container">
-            <img src="../images/ex03.jpg" alt="fotka">
-            <input type="image" src="../icons/thumb-up.png" alt="thumb icon">
-          </div>
-          <div class="pic-container">
-            <img src="../images/ex04.jpg" alt="fotka">
-            <input type="image" src="../icons/thumb-up.png" alt="thumb icon">
-          </div>
-          <div class="pic-container">
-            <img src="../images/ex03.jpg" alt="fotka">
-            <input type="image" src="../icons/thumb-up.png" alt="thumb icon">
-          </div>
-
+        <div>
+          Tutaj będzie pokazana pogoda w polskich górach oraz popularnych ośrodkach narciarskich
         </div>
-
       </div>
-
 
       <aside class="">
         <header class="aside-header">
