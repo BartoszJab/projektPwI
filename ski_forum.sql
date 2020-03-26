@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Mar 2020, 17:38
+-- Czas generowania: 26 Mar 2020, 18:53
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.3
 
@@ -43,7 +43,9 @@ CREATE TABLE `dane_konta` (
 --
 
 INSERT INTO `dane_konta` (`id_profilu`, `id_uzytkownika`, `imie`, `nazwisko`, `wiek`, `plec`, `avatar`) VALUES
-(1, 1, 'Bartosz', NULL, 22, 'mężczyzna', NULL);
+(1, 1, 'Bartosz', NULL, 22, 'mężczyzna', NULL),
+(2, 4, 'Piotr', NULL, 22, 'mężczyzna', NULL),
+(3, 3, 'Paweł', NULL, 22, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,9 @@ CREATE TABLE `uzytkownicy` (
 
 INSERT INTO `uzytkownicy` (`id_uzytkownika`, `login`, `haslo`, `email`, `uprawnienia`) VALUES
 (1, 'bartoszjab', 'e407a0324880029203bfa2926eff9668ccd8557bc62f1d7a0bf5c84e1b130539a7c3acd5ecb08122075f261e431ee3044a333df9dfbe04d4a7230db9a6766b30', 'przykladowymail@wp.pl', 1),
-(2, 'RobertSuperNarciarz', 'e407a0324880029203bfa2926eff9668ccd8557bc62f1d7a0bf5c84e1b130539a7c3acd5ecb08122075f261e431ee3044a333df9dfbe04d4a7230db9a6766b62', 'robi254@gmail.com', 3);
+(2, 'RobertSuperNarciarz', 'e407a0324880029203bfa2926eff9668ccd8557bc62f1d7a0bf5c84e1b130539a7c3acd5ecb08122075f261e431ee3044a333df9dfbe04d4a7230db9a6766b62', 'robi254@gmail.com', 3),
+(3, 'radud', '0f6460d0ed7825fed6bda0f4d9c14942d88edc7ff236479212e69f081815e6f1742c272753b77cc6437f06ef93a46271c6ff9513c68945075212434080e60c82', 'radud@wp.pl', 3),
+(4, 'feher', '8b58ba24942f65f14bdd712b6e08ba9d26b1ecc094f557acf1d06f652f486d34187dacd547df574028461be7e3abd1eb7f551dff8092093e0ef90f088992f4fc', 'feher@gmail.com', 3);
 
 -- --------------------------------------------------------
 
@@ -85,7 +89,9 @@ CREATE TABLE `wpisy` (
 --
 
 INSERT INTO `wpisy` (`id_wpisu`, `id_uzytkownika`, `nazwa`, `tresc`) VALUES
-(1, 1, 'Moj pierwszy wpis', 'Witam w moim pierwszym wpisie wszystkich uzytkownikow');
+(1, 1, 'Moj pierwszy wpis', 'Witam w moim pierwszym wpisie wszystkich uzytkownikow'),
+(2, 3, 'Przywitanie', 'Czesc wszystkim jestem tu nowy :)'),
+(3, 4, 'Dlugosc nart', 'Hej, zastanawiam sie nad kupnem nart. Mozecie cos doradzic dla poczatkujacego? :)');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -119,19 +125,19 @@ ALTER TABLE `wpisy`
 -- AUTO_INCREMENT dla tabeli `dane_konta`
 --
 ALTER TABLE `dane_konta`
-  MODIFY `id_profilu` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_profilu` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id_uzytkownika` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_uzytkownika` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `wpisy`
 --
 ALTER TABLE `wpisy`
-  MODIFY `id_wpisu` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_wpisu` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ograniczenia dla zrzutów tabel
