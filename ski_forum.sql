@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 25 Mar 2020, 14:12
+-- Czas generowania: 26 Mar 2020, 17:38
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.3
 
@@ -25,26 +25,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `moderatorzy`
+-- Struktura tabeli dla tabeli `dane_konta`
 --
 
-CREATE TABLE `moderatorzy` (
-  `id` int(11) NOT NULL,
-  `imie` varchar(30) NOT NULL,
-  `nazwisko` varchar(30) NOT NULL,
+CREATE TABLE `dane_konta` (
+  `id_profilu` int(12) NOT NULL,
+  `id_uzytkownika` int(12) NOT NULL,
+  `imie` varchar(50) COLLATE utf8_polish_ci DEFAULT NULL,
+  `nazwisko` varchar(50) COLLATE utf8_polish_ci DEFAULT NULL,
   `wiek` int(3) DEFAULT NULL,
-  `login` varchar(30) NOT NULL,
-  `haslo` char(128) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `stopien_uprawnien` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `plec` varchar(30) COLLATE utf8_polish_ci DEFAULT NULL,
+  `avatar` varchar(250) COLLATE utf8_polish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `moderatorzy`
+-- Zrzut danych tabeli `dane_konta`
 --
 
-INSERT INTO `moderatorzy` (`id`, `imie`, `nazwisko`, `wiek`, `login`, `haslo`, `email`, `stopien_uprawnien`) VALUES
-(1, 'Bartosz', 'Jabłoński', 22, 'bartoszjab', '932ef3eb6d0c33d5f7aa98fb41ea99f246cfb55f0408d20b3e7a33e021def62ee0dc9a22bc6b7419e20b0d5d132781ac7fc43062534f8d7df49ab96482f42e0d', 'przykladowymail@wp.pl', 1);
+INSERT INTO `dane_konta` (`id_profilu`, `id_uzytkownika`, `imie`, `nazwisko`, `wiek`, `plec`, `avatar`) VALUES
+(1, 1, 'Bartosz', NULL, 22, 'mężczyzna', NULL);
 
 -- --------------------------------------------------------
 
@@ -53,73 +52,102 @@ INSERT INTO `moderatorzy` (`id`, `imie`, `nazwisko`, `wiek`, `login`, `haslo`, `
 --
 
 CREATE TABLE `uzytkownicy` (
-  `id` int(11) NOT NULL,
-  `imie` varchar(30) DEFAULT NULL,
-  `nazwisko` varchar(30) DEFAULT NULL,
-  `wiek` int(3) DEFAULT NULL,
-  `login` varchar(30) NOT NULL,
-  `haslo` char(128) NOT NULL,
-  `email` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_uzytkownika` int(12) NOT NULL,
+  `login` varchar(30) COLLATE utf8_polish_ci NOT NULL,
+  `haslo` char(128) COLLATE utf8_polish_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8_polish_ci NOT NULL,
+  `uprawnienia` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `uzytkownicy`
 --
 
-INSERT INTO `uzytkownicy` (`id`, `imie`, `nazwisko`, `wiek`, `login`, `haslo`, `email`) VALUES
-(1, 'Czarek', NULL, NULL, 'ProSkiier', '67d7a10741bcf42acf5fb5a0a57558faf08567532f282a6f1e36f06e00899b0a5bdda4c807134b0399884d8042eeba949b84056002d0878a14bfab911df5ad5b', 'czarek.rybicki@onet.pl'),
-(2, NULL, NULL, NULL, 'RobertSuperNarciarz', '8723db9b762f5e9aa9a3117c43e5fe385b0b74398d3ff07e2d94da0f86697b5f3773271c2aeb0da75aa6b836f1f15b83b0f48decd75ac5a2d11301b15851a96a', 'robi254@gmail.com');
+INSERT INTO `uzytkownicy` (`id_uzytkownika`, `login`, `haslo`, `email`, `uprawnienia`) VALUES
+(1, 'bartoszjab', 'e407a0324880029203bfa2926eff9668ccd8557bc62f1d7a0bf5c84e1b130539a7c3acd5ecb08122075f261e431ee3044a333df9dfbe04d4a7230db9a6766b30', 'przykladowymail@wp.pl', 1),
+(2, 'RobertSuperNarciarz', 'e407a0324880029203bfa2926eff9668ccd8557bc62f1d7a0bf5c84e1b130539a7c3acd5ecb08122075f261e431ee3044a333df9dfbe04d4a7230db9a6766b62', 'robi254@gmail.com', 3);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `zbanowani_uzytkownicy`
+-- Struktura tabeli dla tabeli `wpisy`
 --
 
-CREATE TABLE `zbanowani_uzytkownicy` (
-  `id` int(11) NOT NULL,
-  `login` varchar(30) NOT NULL,
-  `haslo` char(128) NOT NULL,
-  `email` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `wpisy` (
+  `id_wpisu` int(12) NOT NULL,
+  `id_uzytkownika` int(12) NOT NULL,
+  `nazwa` varchar(250) COLLATE utf8_polish_ci NOT NULL,
+  `tresc` varchar(500) COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `wpisy`
+--
+
+INSERT INTO `wpisy` (`id_wpisu`, `id_uzytkownika`, `nazwa`, `tresc`) VALUES
+(1, 1, 'Moj pierwszy wpis', 'Witam w moim pierwszym wpisie wszystkich uzytkownikow');
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indeksy dla tabeli `moderatorzy`
+-- Indeksy dla tabeli `dane_konta`
 --
-ALTER TABLE `moderatorzy`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `dane_konta`
+  ADD PRIMARY KEY (`id_profilu`),
+  ADD KEY `id_uzytkownika` (`id_uzytkownika`);
 
 --
 -- Indeksy dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_uzytkownika`);
 
 --
--- Indeksy dla tabeli `zbanowani_uzytkownicy`
+-- Indeksy dla tabeli `wpisy`
 --
-ALTER TABLE `zbanowani_uzytkownicy`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `wpisy`
+  ADD PRIMARY KEY (`id_wpisu`),
+  ADD KEY `id_uzytkownika` (`id_uzytkownika`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `moderatorzy`
+-- AUTO_INCREMENT dla tabeli `dane_konta`
 --
-ALTER TABLE `moderatorzy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `dane_konta`
+  MODIFY `id_profilu` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_uzytkownika` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT dla tabeli `wpisy`
+--
+ALTER TABLE `wpisy`
+  MODIFY `id_wpisu` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Ograniczenia dla zrzutów tabel
+--
+
+--
+-- Ograniczenia dla tabeli `dane_konta`
+--
+ALTER TABLE `dane_konta`
+  ADD CONSTRAINT `dane_konta_ibfk_1` FOREIGN KEY (`id_uzytkownika`) REFERENCES `uzytkownicy` (`id_uzytkownika`);
+
+--
+-- Ograniczenia dla tabeli `wpisy`
+--
+ALTER TABLE `wpisy`
+  ADD CONSTRAINT `wpisy_ibfk_1` FOREIGN KEY (`id_uzytkownika`) REFERENCES `uzytkownicy` (`id_uzytkownika`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
