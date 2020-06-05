@@ -1,5 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pl">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/styles.css">
@@ -7,25 +8,18 @@
   </head>
   <body>
     <header>
-      <a id="logo" href="../index.html">SkiForum</a>
+      <a id="logo" href="../index.php">SkiForum</a>
       <nav class=topnav>
         <ul>
-          <li><a href="profil.html">Profil</a></li>
-          <li><a href="forum.html">Forum</a></li>
-          <li><a href="zdjecia.html">Zdjęcia</a></li>
-          <li><a href="pogoda.html">Pogoda</a></li>
-          <li><a href="asortyment.html">Asortyment</a></li>
+          <li><a href="profil.php">Profil</a></li>
+          <li><a href="forum.php">Forum</a></li>
+          <li><a href="zdjecia.php">Zdjęcia</a></li>
+          <li><a href="pogoda.php">Pogoda</a></li>
+          <li><a href="asortyment.php">Asortyment</a></li>
         </ul>
       </nav>
     </header>
-
-    <div class="acc-bar">
-      <ul>
-        <li><button id="log-in-btn" onclick="window.location.href = 'logowanie.html'">Zaloguj się</button></li>
-        <li><button id="sign-up-btn" onclick="window.location.href = 'rejestracja.html'">Rejestracja</button></li>
-      </ul>
-    </div>
-
+    <?php require ('../rejestruj_loguj.php'); ?>
     <div class="btn-container">
       <ul class="select-list">
         <li>
@@ -68,30 +62,7 @@
       </div>
 
 
-      <aside class="">
-        <header class="aside-header">
-          Najnowsze posty
-        </header>
-        <div class="content">
-          ProSkiier: Smarowanie nart
-        </div>
-        <div class="content">
-          Kuba55: Czy jeżeli polecę do Włoch to mogę się zarazić koronawirusem?
-        </div>
-        <div class="content">
-          Aga1991: Snowboard czy narty? Zapraszam do dyskusji :D
-        </div>
-
-        <header class="aside-header">
-          Aktywni użytkownicy
-        </header>
-        <div class="content">
-          RobertSuperNarciarz
-        </div>
-        <div class="content">
-          Lawina_mi_niestraszna
-        </div>
-      </aside>
+      <?php require ('poboczny_posty.php'); ?>
 
     </main>
 
