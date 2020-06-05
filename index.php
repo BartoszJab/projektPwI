@@ -55,10 +55,6 @@
 
     <main class="main-site-content">
       <div class="popular">
-        <ul class="select-list">
-          <li><button id="posts-btn" hidden type="button" name="button">Wpisy</button></li>
-          <li><button id="photos-btn" hidden type="button" name="button">Zdjecia</button></li>
-        </ul>
         <div class="popular-element">
           <?php
           try
