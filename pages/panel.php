@@ -22,7 +22,7 @@
     <div class="btn-container">
       <ul class="select-list">
         <li>
-          <button onclick="window.location.href = 'ustawienia_strony.php'" type="button" name="button">Ustawienia strony</button>
+          <p style="padding-bottom: 15px; color: white; font-size: 20px;">Zarządzaj użytkownikami</p>
         </li>
       </ul>
     </div>
